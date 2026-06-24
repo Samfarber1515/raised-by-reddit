@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raised by Reddit — one great thread, in your inbox weekly</title>
-  <meta name="description" content="Every week we pick one great Reddit thread, read all the answers so you don't have to, and send you the wisdom. Free." />
+  <title>Raised by Reddit — Reddit, but someone read it for you</title>
+  <meta name="description" content="A free weekly email. We read the single best Reddit thread — every reply — and send you only the part worth keeping. No scroll, no FOMO." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Raised by Reddit" />
-  <meta property="og:description" content="One great Reddit thread, distilled and delivered to your inbox every week." />
+  <meta property="og:description" content="Reddit, but someone read it for you. One great thread a week, every reply read, just the wisdom sent." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -128,26 +128,27 @@
     </header>
 
     <main>
-      <h1>One great thread.<br /><em>Every week.</em></h1>
+      <h1>Reddit, but someone<br /><em>read it for you.</em></h1>
       <p class="lede">
-        We pick a thread worth reading, read all the answers so you don't have to,
-        and send you the collected wisdom. No noise. Just the good part.
+        Every week we find the one thread worth your time, read all three thousand
+        replies, and keep only the answers that change how you think. The good part
+        of Reddit — without the 2&nbsp;a.m. scroll.
       </p>
 
       <!-- Replace action with your provider's form endpoint (Buttondown, ConvertKit, etc.) -->
       <form action="#" method="post" id="signup">
         <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
-        <button type="submit">Subscribe — free</button>
+        <button type="submit">Get the good part →</button>
       </form>
-      <p class="fineprint">Free forever. One email a week. Unsubscribe anytime.</p>
+      <p class="fineprint">Free, weekly, all killer no scroller. Unsubscribe anytime.</p>
 
       <section class="preview" aria-label="Example issue">
         <div class="top">
-          <span class="pill">Next issue</span> r/AskReddit · 3.1K replies
+          <span class="pill">This week</span> r/AskReddit · 3.1K replies
         </div>
         <div class="body">
           <h2>Men in happy marriages — what's the one secret that works for you?</h2>
-          <p class="meta">We read 3,100 replies. Here are the three that kept coming up.</p>
+          <p class="meta">3,100 people answered. These three kept coming up.</p>
           <blockquote>
             "Be on the same team. The problem is the opponent, never each other."
             <span class="who">— top comment, 14.2K upvotes</span>
@@ -177,8 +178,8 @@
       if (this.getAttribute('action') === '#') {
         e.preventDefault();
         const email = this.email.value;
-        this.innerHTML = '<p style="font-weight:600;color:var(--accent)">You\'re on the list — see you ' +
-          'in your inbox. 🎉</p>';
+        this.innerHTML = '<p style="font-weight:600;color:var(--accent)">You\'re in. ' +
+          'The good part lands in your inbox this Sunday. 🎉</p>';
         console.log('Captured signup (wire this to your ESP):', email);
       }
     });
