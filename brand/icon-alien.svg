@@ -1,0 +1,35 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Raised by Reddit: a baby Reddit-style alien (Snoo-inspired) with a pacifier -->
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="#FF4500"/>
+
+  <g fill="#FFFFFF">
+    <!-- antenna -->
+    <circle cx="256" cy="110" r="17"/>
+    <rect x="249" y="118" width="14" height="74" rx="7"/>
+
+    <!-- head -->
+    <ellipse cx="256" cy="290" rx="118" ry="104"/>
+
+    <!-- ears -->
+    <circle cx="150" cy="288" r="30"/>
+    <circle cx="362" cy="288" r="30"/>
+  </g>
+
+  <!-- face, in Reddit orange -->
+  <g fill="#FF4500">
+    <!-- eyes -->
+    <ellipse cx="219" cy="278" rx="18" ry="24"/>
+    <ellipse cx="293" cy="278" rx="18" ry="24"/>
+  </g>
+  <!-- eye sparkles -->
+  <g fill="#FFFFFF">
+    <circle cx="225" cy="270" r="6"/>
+    <circle cx="299" cy="270" r="6"/>
+  </g>
+
+  <!-- pacifier (baby!) -->
+  <g>
+    <circle cx="256" cy="344" r="26" fill="none" stroke="#FF4500" stroke-width="11"/>
+    <circle cx="256" cy="344" r="11" fill="#FF4500"/>
+  </g>
+</svg>
