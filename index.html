@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raised by Reddit — Reddit, but someone read it for you</title>
-  <meta name="description" content="A free weekly email. We read the single best Reddit thread — every reply — and send you only the part worth keeping. No scroll, no FOMO." />
+  <title>Raised by Reddit — kiss the doomscroll goodbye</title>
+  <meta name="description" content="Kiss the doomscroll goodbye, and get the best-kept secrets buried in Reddit in your inbox every week. Free." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Raised by Reddit" />
-  <meta property="og:description" content="Reddit, but someone read it for you. One great thread a week, every reply read, just the wisdom sent." />
+  <meta property="og:description" content="Kiss the doomscroll goodbye, and get the best-kept secrets buried in Reddit in your inbox every week." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -128,17 +128,15 @@
     </header>
 
     <main>
-      <h1>Reddit, but someone<br /><em>read it for you.</em></h1>
+      <h1>Kiss the doomscroll<br /><em>goodbye.</em></h1>
       <p class="lede">
-        Every week we find the one thread worth your time, read all three thousand
-        replies, and keep only the answers that change how you think. The good part
-        of Reddit — without the 2&nbsp;a.m. scroll.
+        Get the best-kept secrets buried in Reddit — in your inbox, every week.
       </p>
 
       <!-- Replace action with your provider's form endpoint (Buttondown, ConvertKit, etc.) -->
       <form action="#" method="post" id="signup">
         <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
-        <button type="submit">Get the good part →</button>
+        <button type="submit">Get the secrets →</button>
       </form>
       <p class="fineprint">Free, weekly, all killer no scroller. Unsubscribe anytime.</p>
 
@@ -179,7 +177,7 @@
         e.preventDefault();
         const email = this.email.value;
         this.innerHTML = '<p style="font-weight:600;color:var(--accent)">You\'re in. ' +
-          'The good part lands in your inbox this Sunday. 🎉</p>';
+          'Your first secrets land this Sunday. 🎉</p>';
         console.log('Captured signup (wire this to your ESP):', email);
       }
     });
