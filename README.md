@@ -1,44 +1,82 @@
 # Raised by Reddit
 
-A weekly AI newsletter. Every week it picks one great Reddit thread, reads all the answers, and emails you the best of them. Free.
+A weekly newsletter. Each issue takes one great Reddit thread, reads the answers,
+and sends you the best ones — clean, simple, and worth your time.
 
-Inspired by simple one-thing newsletters like [stayrelevant.email](https://stayrelevant.email/).
+**The trick:** the best Reddit threads are evergreen. So instead of a fragile daily
+scraper, we build a **bank** of issues from the *top threads of all time* and let
+Beehiiv drip them out. Build it once, send for a year.
 
-## What's here
+## How it works
 
-- **`index.html`** — the landing page / signup page (static, deploy anywhere).
-- **`generate.js`** — turns a Reddit thread URL into a finished issue (HTML email + Markdown) using Claude.
-
-## Landing page
-
-Open `index.html` directly, or:
-
-```bash
-npm run serve
+```
+top all-time threads  ->  pick best comments  ->  Claude writes the issue  ->  Apple-clean HTML  ->  Beehiiv
+   (lib/reddit.js)          (lib/reddit.js)         (lib/generate.js)         (lib/email.js)
 ```
 
-To collect real signups, point the `<form action>` in `index.html` at your email
-provider (Buttondown, ConvertKit, Mailchimp, etc.) — there's a `TODO` comment marking it.
+`build-bank.js` runs the whole loop and saves `issues/NNN-slug.html` + `issues/manifest.json`.
 
-Deploy by dropping the repo on Vercel, Netlify, or GitHub Pages — no build step.
+## Setup (one time)
 
-## Generating an issue
+**1. Reddit API app** (free, ~2 min) — anonymous access is blocked, so we use the official API:
+- Go to https://www.reddit.com/prefs/apps → "create another app..."
+- Type: **script**, redirect uri: `http://localhost`
+- Copy the **client id** (under the app name) and the **secret**.
 
+**2. Environment:**
+```bash
+cp .env.example .env   # then fill it in
+```
+```
+ANTHROPIC_API_KEY=sk-ant-...
+REDDIT_CLIENT_ID=...
+REDDIT_CLIENT_SECRET=...
+REDDIT_USERNAME=your_reddit_username   # recommended (most reliable auth)
+REDDIT_PASSWORD=your_reddit_password
+MODEL=claude-sonnet-4-6                # cheap + plenty; swap to claude-opus-4-8 for top quality
+```
+
+**3. Install:**
 ```bash
 npm install
-export ANTHROPIC_API_KEY=sk-...
-npm run generate -- https://www.reddit.com/r/AskReddit/comments/xxxxxx/
 ```
 
-Output lands in `issues/<slug>.html` (paste into your ESP) and `issues/<slug>.md`.
+## Build the bank
 
-Model: `claude-opus-4-8`. Swap it in `generate.js` if you want something cheaper.
+```bash
+# load .env into the shell, then run
+export $(grep -v '^#' .env | xargs)
 
-## Roadmap
+npm run bank -- 25     # start small: build 25 issues and eyeball them
+npm run bank           # build up to 365 (resume-safe — re-run to add more)
+```
 
-- [ ] Wire the signup form to a real provider
-- [ ] Schedule weekly generation (cron / GitHub Action)
-- [ ] Auto-send via the ESP's API once an issue is generated
+Output lands in `issues/`. Open any `.html` to preview. It's resume-safe: it skips
+threads already built, so you can stop and re-run anytime.
+
+## Send through Beehiiv
+
+For each issue: in Beehiiv, new post → add a **custom HTML / code block** → paste the
+file's contents → schedule. `issues/manifest.json` lists every issue's subject line
+and source thread to make scheduling easy.
+
+(Want this automated via the Beehiiv API instead of paste? That's a quick add once
+you confirm your plan has API post creation.)
+
+## Preview the design
+
+```bash
+npm run preview        # writes issue-sample.html with placeholder content
+```
+
+## Files
+
+- `lib/reddit.js` — Reddit API auth + top threads + top comments
+- `lib/generate.js` — Claude turns a thread into an issue (5th-grade, anti-slop, real comments only)
+- `lib/email.js` — renders an issue into the Apple-clean HTML email
+- `build-bank.js` — orchestrates the whole bank
+- `index.html` — the public landing page (also live via GitHub Pages)
+- `brand/` — logo, thumbnail, and design prompts
 
 ---
 
