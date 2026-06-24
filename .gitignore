@@ -3,3 +3,7 @@ node_modules/
 .DS_Store
 issues/
 npm-debug.log*
+
+issue-sample.html
+issue-sample.png
+issues/
