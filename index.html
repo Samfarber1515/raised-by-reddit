@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raised by Reddit — one great thread, in your inbox weekly</title>
+  <meta name="description" content="Every week we pick one great Reddit thread, read all the answers so you don't have to, and send you the wisdom. Free." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Raised by Reddit" />
+  <meta property="og:description" content="One great Reddit thread, distilled and delivered to your inbox every week." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --ink: #1a1714;
+      --muted: #6b635a;
+      --accent: #ff4500; /* reddit orange */
+      --card: #ffffff;
+      --line: #e9e2d8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 620px; margin: 0 auto; padding: 0 24px; }
+
+    header { padding: 40px 0 0; }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 600; font-size: 18px; letter-spacing: -0.01em;
+    }
+    .brand .dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--accent); display: grid; place-items: center;
+      color: #fff; font-weight: 700; font-size: 15px;
+    }
+
+    main { padding: 80px 0 64px; }
+    @media (max-width: 640px) { main { padding: 56px 0 48px; } }
+
+    h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(38px, 7vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+    .lede {
+      font-size: clamp(17px, 2.5vw, 20px);
+      color: var(--muted);
+      max-width: 30em;
+      margin-bottom: 40px;
+    }
+
+    form {
+      display: flex; gap: 10px; max-width: 460px; margin-bottom: 14px;
+    }
+    @media (max-width: 480px) { form { flex-direction: column; } }
+    input[type="email"] {
+      flex: 1; padding: 15px 18px; font-size: 16px;
+      border: 1px solid var(--line); border-radius: 12px;
+      background: var(--card); color: var(--ink); font-family: inherit;
+    }
+    input[type="email"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    button {
+      padding: 15px 24px; font-size: 16px; font-weight: 600;
+      border: none; border-radius: 12px; cursor: pointer;
+      background: var(--accent); color: #fff; font-family: inherit;
+      transition: transform .06s ease, opacity .2s ease;
+      white-space: nowrap;
+    }
+    button:hover { opacity: .92; }
+    button:active { transform: translateY(1px); }
+    .fineprint { font-size: 14px; color: var(--muted); }
+
+    .preview {
+      margin-top: 72px; border: 1px solid var(--line); border-radius: 16px;
+      background: var(--card); overflow: hidden;
+    }
+    .preview .top {
+      display: flex; align-items: center; gap: 8px;
+      padding: 14px 18px; border-bottom: 1px solid var(--line);
+      font-size: 14px; color: var(--muted);
+    }
+    .preview .top .pill {
+      background: var(--bg); border: 1px solid var(--line);
+      padding: 2px 10px; border-radius: 999px; font-size: 12px;
+    }
+    .preview .body { padding: 24px; }
+    .preview h2 {
+      font-family: 'Fraunces', Georgia, serif; font-weight: 600;
+      font-size: 24px; line-height: 1.2; margin-bottom: 6px;
+    }
+    .preview .meta { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+    .preview blockquote {
+      border-left: 3px solid var(--accent); padding: 4px 0 4px 16px;
+      margin: 0 0 16px; color: var(--ink);
+    }
+    .preview blockquote .who { display: block; font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    footer {
+      padding: 48px 0 56px; border-top: 1px solid var(--line);
+      font-size: 14px; color: var(--muted);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    footer a { color: var(--muted); }
+
+    .disclaimer { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="dot">r</span> Raised by Reddit</div>
+    </header>
+
+    <main>
+      <h1>One great thread.<br /><em>Every week.</em></h1>
+      <p class="lede">
+        We pick a thread worth reading, read all the answers so you don't have to,
+        and send you the collected wisdom. No noise. Just the good part.
+      </p>
+
+      <!-- Replace action with your provider's form endpoint (Buttondown, ConvertKit, etc.) -->
+      <form action="#" method="post" id="signup">
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
+        <button type="submit">Subscribe — free</button>
+      </form>
+      <p class="fineprint">Free forever. One email a week. Unsubscribe anytime.</p>
+
+      <section class="preview" aria-label="Example issue">
+        <div class="top">
+          <span class="pill">Next issue</span> r/AskReddit · 3.1K replies
+        </div>
+        <div class="body">
+          <h2>Men in happy marriages — what's the one secret that works for you?</h2>
+          <p class="meta">We read 3,100 replies. Here are the three that kept coming up.</p>
+          <blockquote>
+            "Be on the same team. The problem is the opponent, never each other."
+            <span class="who">— top comment, 14.2K upvotes</span>
+          </blockquote>
+          <blockquote>
+            "Say the small thank-yous out loud. The dishes, the school run, all of it."
+            <span class="who">— 8.7K upvotes</span>
+          </blockquote>
+          <blockquote>
+            "Go to bed at the same time. You'd be amazed what gets resolved in the dark."
+            <span class="who">— 6.1K upvotes</span>
+          </blockquote>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Raised by Reddit</span>
+      <span>Not affiliated with Reddit, Inc.</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Lightweight form handling placeholder — swap action above for your ESP, or POST here.
+    document.getElementById('signup').addEventListener('submit', function (e) {
+      if (this.getAttribute('action') === '#') {
+        e.preventDefault();
+        const email = this.email.value;
+        this.innerHTML = '<p style="font-weight:600;color:var(--accent)">You\'re on the list — see you ' +
+          'in your inbox. 🎉</p>';
+        console.log('Captured signup (wire this to your ESP):', email);
+      }
+    });
+  </script>
+</body>
+</html>
