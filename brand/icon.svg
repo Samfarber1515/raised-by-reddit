@@ -1,0 +1,33 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Raised by Reddit: a baby bottle (raised) with an upvote (by Reddit) -->
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="#FF4500"/>
+
+  <g fill="#FFFFFF">
+    <!-- nipple -->
+    <path d="M236 116 q20 -16 40 0 q8 8 6 24 l-4 24 h-44 l-4 -24 q-2 -16 6 -24 z"/>
+    <!-- collar / ring -->
+    <rect x="196" y="168" width="120" height="40" rx="10"/>
+    <!-- bottle body with shoulders -->
+    <path d="M206 206
+             h100
+             q18 0 18 22
+             v176
+             q0 30 -30 30
+             h-76
+             q-30 0 -30 -30
+             v-176
+             q0 -22 18 -22 z"/>
+  </g>
+
+  <!-- upvote arrow carved into the bottle, in Reddit orange -->
+  <g fill="#FF4500">
+    <path d="M256 250 l52 56 h-32 v52 h-40 v-52 h-32 z"/>
+  </g>
+
+  <!-- measurement ticks (it's a bottle) -->
+  <g fill="#FF4500" opacity="0.55">
+    <rect x="298" y="252" width="14" height="6" rx="3"/>
+    <rect x="298" y="288" width="14" height="6" rx="3"/>
+    <rect x="298" y="324" width="14" height="6" rx="3"/>
+  </g>
+</svg>
