@@ -15,20 +15,18 @@
     line-height: 1.02; letter-spacing: -0.02em; margin-bottom: 18px; }
   .brand .tag { font-size: 23px; line-height: 1.35; opacity: 0.92; font-style: italic;
     font-family: Georgia, serif; max-width: 320px; }
-  .brand .proof { display: flex; align-items: center; gap: 14px; }
-  .brand .avatars { display: flex; }
-  .brand .avatars span { width: 58px; height: 58px; border-radius: 50%;
-    border: 3px solid #FF4500; margin-left: -16px; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 32px; line-height: 1; background: #fff; }
-  .brand .avatars span:first-child { margin-left: 0; }
-  .brand .avatars span:nth-child(1) { background: #FFE3B3; }
-  .brand .avatars span:nth-child(2) { background: #CDE6FF; }
-  .brand .avatars span:nth-child(3) { background: #D8F3CF; }
-  .brand .avatars .more { background: #ffd9c9; color: #FF4500; font-weight: 800; font-size: 22px; }
-  .brand .proofText { font-size: 19px; font-weight: 700; line-height: 1.25; }
-  .brand .proofText small { display: block; font-size: 13px; font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.85; margin-top: 4px; }
+
+  /* Sourced stat callout */
+  .brand .stat .bignum { font-family: Georgia, serif; font-size: 50px; font-weight: 700;
+    line-height: 1; letter-spacing: -0.02em; }
+  .brand .stat .statsub { font-size: 18px; font-weight: 600; line-height: 1.3;
+    margin-top: 8px; opacity: 0.96; max-width: 330px; }
+  .brand .stat .cite { display: inline-flex; align-items: center; gap: 7px; margin-top: 15px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; padding: 6px 13px; }
+  .brand .stat .cite .chk { width: 16px; height: 16px; border-radius: 50%; background: #fff;
+    color: #FF4500; display: inline-flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 900; }
 
   /* Right cards panel */
   .feed { flex: 1; background: #faf7f2; padding: 44px 52px;
@@ -64,9 +62,10 @@
       <h1>Raised<br/>by Reddit</h1>
       <div class="tag">Reddit, but someone read it for you.</div>
     </div>
-    <div class="proof">
-      <div class="avatars"><span>🧑🏻</span><span>👩🏽</span><span>🧔🏾</span><span class="more">+</span></div>
-      <div class="proofText">Read by 100+ curious humans<small>Free · Every Sunday</small></div>
+    <div class="stat">
+      <div class="bignum">4 billion+ comments.</div>
+      <div class="statsub">We read the ones that matter, so you don't have to.</div>
+      <div class="cite"><span class="chk">✓</span> Source: Reddit · all-time</div>
     </div>
   </div>
 
