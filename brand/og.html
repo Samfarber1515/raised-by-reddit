@@ -7,41 +7,35 @@
   html, body { width: 1200px; height: 630px; overflow: hidden; }
   body { display: flex; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; }
 
-  /* Left brand panel */
-  .brand { width: 452px; background: #FF4500; color: #fff; padding: 56px 48px;
+  /* Left brand panel — identity + one proof chip, lots of air */
+  .brand { width: 468px; background: #FF4500; color: #fff; padding: 64px 56px;
     display: flex; flex-direction: column; justify-content: space-between; }
-  .brand .logo { width: 104px; height: 104px; }
-  .brand h1 { font-family: Georgia, "Times New Roman", serif; font-size: 56px;
-    line-height: 1.02; letter-spacing: -0.02em; margin-bottom: 18px; }
-  .brand .tag { font-size: 23px; line-height: 1.35; opacity: 0.92; font-style: italic;
-    font-family: Georgia, serif; max-width: 320px; }
-
-  /* Sourced stat callout */
-  .brand .stat .bignum { font-family: Georgia, serif; font-size: 50px; font-weight: 700;
-    line-height: 1; letter-spacing: -0.02em; }
-  .brand .stat .statsub { font-size: 18px; font-weight: 600; line-height: 1.3;
-    margin-top: 8px; opacity: 0.96; max-width: 330px; }
-  .brand .stat .cite { display: inline-flex; align-items: center; gap: 7px; margin-top: 15px;
-    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-    border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; padding: 6px 13px; }
-  .brand .stat .cite .chk { width: 16px; height: 16px; border-radius: 50%; background: #fff;
+  .brand .logo { width: 96px; height: 96px; }
+  .brand h1 { font-family: Georgia, "Times New Roman", serif; font-size: 64px;
+    line-height: 1.0; letter-spacing: -0.025em; margin-bottom: 22px; }
+  .brand .tag { font-size: 24px; line-height: 1.4; opacity: 0.95; font-style: italic;
+    font-family: Georgia, serif; max-width: 330px; }
+  .brand .chip { align-self: flex-start; display: inline-flex; align-items: center; gap: 9px;
+    white-space: nowrap; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; border: 1.5px solid rgba(255,255,255,0.55);
+    border-radius: 999px; padding: 9px 17px; }
+  .brand .chip .chk { width: 18px; height: 18px; border-radius: 50%; background: #fff;
     color: #FF4500; display: inline-flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 900; }
+    font-size: 12px; font-weight: 900; }
 
-  /* Right cards panel */
-  .feed { flex: 1; background: #faf7f2; padding: 44px 52px;
-    display: flex; flex-direction: column; justify-content: center; }
-  .feed .label { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: #9a9186; font-weight: 700; margin-bottom: 20px; }
-  .card { background: #fff; border: 1px solid #ebe6dd; border-radius: 16px;
-    padding: 20px 22px; margin-bottom: 16px; box-shadow: 0 1px 2px rgba(0,0,0,.03); }
-  .card:last-child { margin-bottom: 0; }
-  .card .sub { font-size: 14px; color: #8a8278; font-weight: 600; margin-bottom: 7px; }
-  .card .title { font-size: 22px; font-weight: 700; color: #15120f;
-    line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 12px; }
-  .card .stats { font-size: 15px; color: #6b635a; font-weight: 600; }
+  /* Right cards panel — two cards, generous spacing */
+  .feed { flex: 1; background: #faf7f2; padding: 0 64px;
+    display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+  .feed .label { font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #a39a8d; font-weight: 700; margin-bottom: 2px; }
+  .card { background: #fff; border: 1px solid #eee7dc; border-radius: 18px;
+    padding: 28px 30px; box-shadow: 0 2px 10px rgba(0,0,0,.04); }
+  .card .sub { font-size: 15px; color: #8a8278; font-weight: 600; margin-bottom: 10px; }
+  .card .title { font-size: 27px; font-weight: 700; color: #15120f;
+    line-height: 1.22; letter-spacing: -0.015em; margin-bottom: 16px; }
+  .card .stats { font-size: 16px; color: #6b635a; font-weight: 600; }
   .card .stats .up { color: #FF4500; }
-  .card .stats .dot { color: #cfc7bb; margin: 0 8px; }
+  .card .stats .dot { color: #d3cbbf; margin: 0 9px; }
 </style>
 </head>
 <body>
@@ -62,32 +56,20 @@
       <h1>Raised<br/>by Reddit</h1>
       <div class="tag">Reddit, but someone read it for you.</div>
     </div>
-    <div class="stat">
-      <div class="bignum">4 billion+ comments.</div>
-      <div class="statsub">We read the ones that matter, so you don't have to.</div>
-      <div class="cite"><span class="chk">✓</span> Source: Reddit · all-time</div>
-    </div>
+    <div class="chip"><span class="chk">✓</span> 4 billion+ comments · Reddit</div>
   </div>
 
   <div class="feed">
     <div class="label">Threads we've turned into issues</div>
-
     <div class="card">
       <div class="sub">r/AskReddit</div>
       <div class="title">Men in happy marriages — what's the one secret that actually works?</div>
       <div class="stats"><span class="up">▲ 14.2k</span><span class="dot">·</span>3.1k comments</div>
     </div>
-
     <div class="card">
       <div class="sub">r/AskReddit</div>
       <div class="title">People who retired by 40 — what would you tell your 25-year-old self?</div>
       <div class="stats"><span class="up">▲ 21.3k</span><span class="dot">·</span>5.6k comments</div>
-    </div>
-
-    <div class="card">
-      <div class="sub">r/AskReddit</div>
-      <div class="title">What's a skill you can learn in 6 months that pays off for life?</div>
-      <div class="stats"><span class="up">▲ 9.8k</span><span class="dot">·</span>2.4k comments</div>
     </div>
   </div>
 </body>
